@@ -52,15 +52,15 @@
             </div>
         </div>
         <button id="convert">Convert</button>
+        <br /><br /><hr /><br />
+        <canvas></canvas>
         <script>
             $("#convert").click(function() {
             //var testdiv = document.getElementById("testdiv");
                 html2canvas($("#fullcard"), {
                     dpi:1200,
                     onrendered: function(canvas) {
-                        // canvas is the final rendered <canvas> element
-                        var myImage = canvas.toDataURL("image/png");
-                        window.open(myImage);
+                        document.body.appendChild(canvas);
                     }
                 });
             });
