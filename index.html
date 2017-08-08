@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="html2canvas.min.js"></script>
+        <style>
+            /* div#background-header {
+                background-image: url("header.png");
+                background-size: 100vw;
+                /* height:auto; 
+                background-position: center center;
+            }
+            div#background-footer {
+                background-image: url("footer.png");
+                background-size: 100vw;
+                /* height:auto; 
+                background-position: center center;
+            } */
+            div#background-body {
+                background-image: url("body.png");
+                background-size: 100vw auto;
+                background-position: center;
+                background-repeat: repeat-y;
+            }
+            div#content{
+                width:95vw;
+                margin:auto;
+            }
+            div#fullcard {
+                background: #fff7e0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="fullcard">
+            <div id="background-header">
+                 <img src="header.png" style="width:100%;" /> 
+            </div>
+            <div id="background-body">
+                <div id="content" contenteditable>
+                </div>
+            </div>
+            <div id="background-footer">
+                 <img src="footer.png" style="width:100%;" /> 
+            </div>
+        </div>
+        <button id="convert">Convert</button>
+        <script>
+            $("#convert").click(function() {
+            //var testdiv = document.getElementById("testdiv");
+                html2canvas($("#fullcard"), {
+                    dpi:1200,
+                    onrendered: function(canvas) {
+                        // canvas is the final rendered <canvas> element
+                        var myImage = canvas.toDataURL("image/png");
+                        window.open(myImage);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
