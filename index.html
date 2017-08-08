@@ -59,7 +59,8 @@
                 html2canvas($("#fullcard"), {
                     dpi:1200,
                     onrendered: function(canvas) {
-                        document.body.appendChild(canvas);
+                        var myImage = canvas.toDataURL("image/png");
+                        window.location = myImage;
                     }
                 });
             });
