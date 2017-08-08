@@ -56,7 +56,7 @@
             $("#convert").click(function() {
             //var testdiv = document.getElementById("testdiv");
                 html2canvas($("#fullcard"), {
-                    dpi:1200,
+                    dpi:600,
                     onrendered: function(canvas) {
                         var myImage = canvas.toDataURL("image/png");
                         window.location = myImage;
