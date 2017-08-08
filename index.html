@@ -59,8 +59,8 @@
                     dpi:600,
                     onrendered: function(canvas) {
                         var myImage = canvas.toDataURL("image/png");
-//                         window.open(myImage);
-                        window.location = myImage;
+                        window.open(myImage, '_blank');
+//                         window.location = myImage;
                     }
                 });
             });
