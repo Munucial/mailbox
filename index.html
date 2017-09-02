@@ -51,6 +51,7 @@
                  <img src="footer.png" style="width:100%;" /> 
             </div>
         </div>
+        <br /><br /><hr /><h1>Result:</h1><br /><div id="result"></div>
         <button id="convert">Convert</button>
         <script>
             $("#convert").click(function() {
@@ -59,8 +60,8 @@
                     dpi:600,
                     onrendered: function(canvas) {
                         var myImage = canvas.toDataURL("image/png");
-                        console.log(myImage);
-                        window.open(myImage);
+//                         window.open(myImage);
+                        document.getElementById("result").innerHTML = canvas;
                     }
                 });
             });
