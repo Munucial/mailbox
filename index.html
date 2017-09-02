@@ -51,8 +51,9 @@
                  <img src="footer.png" style="width:100%;" /> 
             </div>
         </div>
-        <br /><br /><hr /><h1>Result:</h1><br /><div id="result"></div>
         <button id="convert">Convert</button>
+        <br /><br /><hr /><h1>Result:</h1><br /><canvas id="result"></canvas>
+        
         <script>
             $("#convert").click(function() {
             //var testdiv = document.getElementById("testdiv");
@@ -61,7 +62,7 @@
                     onrendered: function(canvas) {
                         var myImage = canvas.toDataURL("image/png");
 //                         window.open(myImage);
-                        document.getElementById("result").innerHTML = canvas;
+                        document.body.appendChild(canvas);
                     }
                 });
             });
