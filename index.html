@@ -52,17 +52,27 @@
             </div>
         </div>
         <button id="convert">Convert</button>
-        <br /><br /><hr /><h1>Result:</h1><br /><canvas id="result"></canvas>
+        <div id="resultdiv">
+        <br /><br /><hr /><h1 id="resultheader">Result:</h1><br /><canvas id="result"></canvas>
+        </div>
         
         <script>
+            function isCanvasSupported(){
+              var elem = document.createElement('canvas');
+              return !!(elem.getContext && elem.getContext('2d'));
+            }
             $("#convert").click(function() {
             //var testdiv = document.getElementById("testdiv");
                 html2canvas($("#fullcard"), {
                     dpi:600,
                     onrendered: function(canvas) {
-                        var myImage = canvas.toDataURL("image/png");
-//                         window.open(myImage);
-                        document.body.appendChild(canvas);
+                        if (isCanvasSupported) {
+                            document.getElementById("resultdiv").innerHTML = "<br /><br /><hr /><h1 id="resultheader">Result:</h1><br /><canvas id="result"></canvas>";
+                            document.body.appendChild(canvas);
+                        } else {
+                            var myImage = canvas.toDataURL("image/png");
+                            window.open(myImage);
+                        }
                     }
                 });
             });
