@@ -53,7 +53,6 @@
         </div>
         <button id="convert">Convert</button>
         <div id="resultdiv">
-        <br /><br /><hr /><h1 id="resultheader">Result:</h1><br /><canvas id="result"></canvas>
         </div>
         
         <script>
@@ -67,7 +66,7 @@
                     dpi:600,
                     onrendered: function(canvas) {
                         if (isCanvasSupported) {
-                            document.getElementById("resultdiv").innerHTML = "<br /><br /><hr /><h1 id="resultheader">Result:</h1><br /><canvas id="result"></canvas>";
+                            document.getElementById("resultdiv").innerHTML = '<br /><br /><hr /><h1 id="resultheader">Result:</h1><br /><canvas id="result"></canvas>';
                             document.body.appendChild(canvas);
                         } else {
                             var myImage = canvas.toDataURL("image/png");
