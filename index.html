@@ -6,6 +6,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="html2canvas.min.js"></script>
         <style>
+            * {
+                max-width: inherit;
+            }
             /* div#background-header {
                 background-image: url("header.png");
                 background-size: 100vw;
@@ -19,17 +22,12 @@
                 background-position: center center;
             } */
             div#background-body {
-                max-height: inherit;
                 background-image: url("body.png");
                 background-size: 100vw auto;
                 background-position: center;
                 background-repeat: repeat-y;
             }
-            div#background-header, div#background-footer {
-                max-height: inherit;
-            }
             #content{
-                max-height: inherit;
                 width:95vw;
                 margin:auto;
             }
