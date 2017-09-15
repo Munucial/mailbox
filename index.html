@@ -19,12 +19,17 @@
                 background-position: center center;
             } */
             div#background-body {
+                max-height: inherit;
                 background-image: url("body.png");
                 background-size: 100vw auto;
                 background-position: center;
                 background-repeat: repeat-y;
             }
+            div#background-header, div#background-footer {
+                max-height: inherit;
+            }
             #content{
+                max-height: inherit;
                 width:95vw;
                 margin:auto;
             }
@@ -44,7 +49,8 @@
                  <img src="header.png" style="width:100%;" /> 
             </div>
             <div id="background-body">
-                <div id="content" placeholder="Text here..." contenteditable>
+                <div id="content" contenteditable>
+                    text here...
                 </div>
                 <div id="content">
                 <br /><hr /><br />
